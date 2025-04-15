@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+	<meta charset="utf-8">
+	<title>Closures</title>
+	</head>
+	<body>
+		<h1>Closures</h1>
+
+		<script>	
+			function nummo (){
+				let i = 0;
+				return function (){
+				
+					return i++;
+				
+				}
+			}
+
+			const counter = nummo ();
+
+			console.log( counter() ); //1
+			console.log( counter() ); //2
+			console.log( counter() ); //3
+		</script>
+	</body>
+</html>

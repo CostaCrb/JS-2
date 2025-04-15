@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function props(obj){
+      for(let prop in obj){
+        console.log(prop, obj[prop]);
+      }
+    }
+
+    /*
+      1. Посмотрите какие свойства и методы есть у объекта window (запустите скрипт и изучите вывод в консоли)
+      2. Вместо window поочередно подставьте объекты history, location, document и изучите вывод в консоли
+      3. Выведите свойство document.title в консоль. Попробуйте изменить это свойство и посмотрите как изменится название вкладки для текуей страницы
+    */
+   props(document)
+   
+   window.document.title = 'Hello!';
+  </script>
+</body>
+</html>

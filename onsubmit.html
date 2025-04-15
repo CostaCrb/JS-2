@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        input{
+            border: 3px solid rgb(190, 190, 190);
+        }
+        .row{
+            padding: 4px 6px;
+        }
+        .error {
+           border: 3px solid rgb(255, 154, 154); 
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="myform" onsubmit="return check(this)">
+        <div class="row"><input type="text" name="param1"></div>
+        <div class="row"><input type="text" name="param2"></div>
+        <div class="row"><input type="text" name="param3"></div>
+        <div class="row"><input type="text" name="param4"></div>
+        <div class="row"><input type="text" name="param5"></div>
+        <div class="row"><input type="text" name="param6"></div>
+        <div class="row"><input type="text" name="param7"></div>
+
+        <div class="row"><textarea name="param8" id="" cols="20" rows="5"></textarea></div>
+        <div class="row"><input type="checkbox" name="param9"> Согласны на всё</div>
+
+        <div class="row"><input type="submit" ></div>
+
+    </form>
+    <script>
+        /* 
+        Реализовать функцию check() так, чтобы форма отправляла данные, в случае заполненности всех элементов формы.
+        Если, какое-то из однострочных полей или textarea будет заполнено, то нарисовать ему красный бордюр и вывести alert с текстом "Заполните все поля"
+        */
+        function check(elem){
+            let flag = true;
+
+            let inputs = Array.from(document.querySelectorAll('#myform input[type=text]'))
+
+            for (let i = 0; i < inputs.length; i++) {
+
+                if(!inputs[i].value.trim()) {
+                    flag = false;
+                    inputs[i].className = 'error'
+                }
+                else {
+                    inputs[i].className = ''
+                }
+            }
+            let textarea = document.querySelector('#myform textarea')
+                if (!textarea.value.trim()) {
+                    flag = false;
+                    textarea.className = 'error'
+                }
+                else {textarea.className = ''
+
+                }
+
+             
+            let checkbox = document.querySelector('#myform input[type=checkbox]')
+                if (!checkbox.checked) {
+                    flag = false
+                }
+
+
+
+            return flag
+
+        }
+        
+        
+
+    </script>
+</body>
+</html>

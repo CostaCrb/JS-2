@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+      Тело кредита <input type="text" id="S" value="2000000" > руб.<br>
+      Проценты <input type="text" id="p" value="9.5">%<br>
+      Продолжительность <input type="text" id="n" value="5"> лет<br>
+      <input type="button" onclick="mortgage()" value='Найти'>
+      <hr />
+      <pre>Результат: <strong id="result">0</strong></pre>
+  </form>
+  <script>
+  /* Укажите в кнопке "Найти" атрибут onclick со значением "mortgage()" и реализуйте функцию mortgage() так, чтобы она по идентификаторам S, p и n получала данные из полей ввода, переводила данные в числовой вид и вычисляла аннуитетный ипотечный платёж. Результат должен записываться в элемент с идентификатором "result" */
+
+  function mortgage(){
+		
+		const s = parseFloat(document.querySelector('#S').value);
+		let p = parseFloat(document.querySelector('#p').value);
+		let n = parseFloat(document.querySelector('#n').value)
+		
+		p = p / 1200;
+		n = n * 12;
+		
+		const A = s * p / (1 - (1 + p) ** (-n));
+		
+		document.querySelector('#result').innerHTML = A.toFixed(2);
+		
+  }
+  </script>
+</body>
+</html>
