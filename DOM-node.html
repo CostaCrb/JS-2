@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Привет, мир!</h1><!-- комментарий :) -->
+  <p>Ехал Грека через реку</p>
+
+  <script>
+    /* 1. Для каждого узла выведите свойства nodeType, nodeName и nodeValue */
+    let HTMLNode = document.querySelector('h1');
+    let textNode = HTMLNode.firstChild;
+    let commentNode = HTMLNode.nextSibling;
+    let docNode = document.documentElement;
+    let fragmentNode = document.createDocumentFragment();
+	
+	let pNode = document.querySelector('p');
+   
+   let nodes = [HTMLNode, textNode, commentNode, docNode, fragmentNode, pNode]
+	nodes.forEach(node => {
+		const {nodeType, nodeName, nodeValue} = node
+		console.log (`nodeType=${nodeType}, nodeName=${nodeName}, nodeValue=${nodeValue}`)
+	
+	})
+
+
+   /* 2. Какой fragmentNodeтип узла у элемента <p>Ехал Грека через реку</p>? Получите ссылку на него и выведите свойства  nodeType и nodeName*/
+
+
+
+
+
+  </script>
+</body>
+</html>

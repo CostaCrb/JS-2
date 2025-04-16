@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" id="addRow">
+    <input type="text" />
+    <input type="button" value="Добавить" onclick="add()"/>
+  </form>
+
+  <ul id="ul">
+   <li>Lorem.</li>
+   <li>Amet.</li>
+   <li>Ea.</li>
+  </ul>
+  
+ <script>
+    /* Написать функцию add(), которая будет создавать клон первого элемента списка, заполнять его текст содержимым из  <input type="text" /> и добавлять к ul
+   */
+   function add(){
+    const input = document.querySelector('#addRow input')
+	const ul = document.querySelector('#ul')
+	
+	console.log(input)
+	console.log(ul)
+	
+	if (!input.value.trim() )
+	return;
+	
+	
+	const firstLi = ul.querySelector('li')
+	const clone = firstLi.cloneNode(false)
+	clone.innerHTML = input.value;
+	ul.appendChild(clone)
+	input.value = ''
+	input.focus()
+   }
+ </script>
+</body>
+</html>

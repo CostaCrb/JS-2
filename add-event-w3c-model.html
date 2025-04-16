@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+     <div class="card" data-id="1">
+       <h2>Продукт1</h2>
+       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, exercitationem!</p>
+       <button>В корзину</button>
+     </div>
+     <div class="card" data-id="2">
+       <h2>Продукт2</h2>
+       <p>Incidunt, officiis sequi! Architecto placeat odit non atque possimus doloribus.</p>
+       <button>В корзину</button>
+     </div>
+     <div class="card" data-id="3">
+       <h2>Продукт3</h2>
+       <p>Voluptatibus earum non reiciendis, enim ut nisi doloremque est neque.</p>
+       <button>В корзину</button>
+     </div>
+     <div class="card" data-id="4">
+       <h2>Продукт4</h2>
+       <p>Debitis tempore corrupti veniam exercitationem dolorum quasi, in dolores neque!</p>
+       <button>В корзину</button>
+     </div> 
+  </div>
+  <script>
+    /* Есть функция addBasket. Назначить её как обработчик на все кнопки button, которые находятся внутри блоков с классом card. Примечание: перед выполнением нажмите первую кнопку и посмотрите как она работает - так должны работать другие кнопки. Закомментруйте код в 39-строке. В этом задании нужно использовать базовую модель событий */
+    function addBasket(){
+      const card = this.parentNode;
+      const id = card.getAttribute('data-id');
+      alert(`Добавлен товар ${id}`)
+    }
+    //document.querySelector('button').addEventListener('click', addBasket)
+	
+	const buttons = document.querySelectorAll('.card button');
+	
+	buttons.forEach(button => button.addEventListener('click', addBasket))
+	
+  </script>
+</body>
+</html>

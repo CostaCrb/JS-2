@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Нажать</button>
+
+  <script>
+    /* Назначьте элементу button обработчик showEventProps на нажатие (событие onclick). Внутри обработчика выведите все свойства объекта-события ev*/
+    let button = document.querySelector('button')
+
+    function showEventProps(ev){
+		console.log(ev)
+    }
+	
+	button.addEventListener('click', showEventProps)
+	
+  </script>
+</body>
+</html>
